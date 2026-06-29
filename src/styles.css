@@ -1,0 +1,78 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --font-display: "Montserrat", "Helvetica Neue", system-ui, sans-serif;
+  --font-sans: "Open Sans", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.375rem;
+
+  /* Brand JN */
+  --jn-blue: #0884CC;
+  --jn-blue-dark: #066aa3;
+  --jn-orange: #FCAC21;
+  --jn-orange-dark: #e09508;
+  --jn-gray: #C3C4C8;
+  --jn-ink: #1F2532;
+
+  --background: #ffffff;
+  --foreground: #1F2532;
+  --ink: #1F2532;
+
+  --card: #ffffff;
+  --card-foreground: #1F2532;
+
+  --primary: #0884CC;
+  --primary-foreground: #ffffff;
+
+  --secondary: #FCAC21;
+  --secondary-foreground: #1F2532;
+
+  --accent: #FCAC21;
+  --accent-foreground: #1F2532;
+
+  --muted: #f4f5f7;
+  --muted-foreground: #5b6470;
+
+  --border: #e3e5ea;
+  --ring: #0884CC;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+}
